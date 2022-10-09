@@ -143,22 +143,6 @@ $ ./certbot-auto renew --cert-name simplehttps.com  --manual-auth-hook "/脚本�
 
 **注意：只有单机建议这样运行，如果要将证书同步到多台web服务器，需要有别的方案，目前在开发中，主要目的就是同步证书到集群服务器上**
 
-### 贡献
-
-- 阿里云 python 版 @Duke-Wu
-- 腾讯云 python 版 @akgnah
-- 华为云 python 版 @jinhucheung
-- GoDaddy PHP 版 wlx_1990 （2019-01-11）
-
-### 其他
-
-- 可以关注公众号（虞大胆的叽叽喳喳，yudadanwx），了解更多密码学&HTTPS协议知识。
-- 我写了一本书[《深入浅出HTTPS：从原理到实战》](https://mp.weixin.qq.com/s/80oQhzmP9BTimoReo1oMeQ)了解更多关于HTTPS方面的知识。**如果你觉得本书还可以，希望能在豆瓣做个点评，以便让更多人了解，非常感谢。豆瓣评论地址：[https://book.douban.com/subject/30250772/](https://book.douban.com/subject/30250772/)**
-
-公众号二维码：
-
-![公众号：虞大胆的叽叽喳喳，yudadanwx](https://notes.newyingyong.cn/static/image/wxgzh/qrcode_258.jpg)
-
-《深入浅出HTTPS：从原理到实战》二维码：
-
-![深入浅出HTTPS：从原理到实战](https://notes.newyingyong.cn/static/image/httpsbook/httpsbook-small-jd.jpg)
+### Note
+     certbot certonly  -d *.woldy.net -d woldy.net --manual --preferred-challenges dns  --manual-auth-hook "/data/service/certbot-letencrypt-wildcardcertificates-alydns-au/au.sh php aly add" --manual-cleanup-hook "/data/service/certbot-letencrypt-wildcardcertificates-alydns-au/au.sh php aly clean"
+     1 1 */1 * * certbot renew --manual --preferred-challenges dns --deploy-hook  "service nginx reload" --manual-auth-hook "/data/service/certbot-letencrypt-wildcardcertificates-alydns-au/au.sh/au.sh php aly add" --manual-cleanup-hook "/data/service/certbot-letencrypt-wildcardcertificates-alydns-au/au.sh/au.sh php aly clean"
